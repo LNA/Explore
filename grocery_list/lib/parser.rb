@@ -7,11 +7,17 @@ class Parser
 
     Nokogiri::XML(File.open(file)).css('list').each do |list|
       list.children.each do |child|
-        if child.name !="text" 
-          @list[child.name] = []
-        end
+        add_catagory(child)
       end
     end
     @list
+  end
+
+private
+
+  def add_catagory(child)
+    if child.name != "text"
+      @list[child.name] = []
+    end
   end
 end
