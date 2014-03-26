@@ -2,8 +2,8 @@
   <fruit>Apples</fruit>
   <fruit>Bananas</fruit>
 
-  <vegetables>Spinach</vegetables>
-  <vegetables>Kale</vegetables>
+  <vegetable>Spinach</vegetable>
+  <vegetable>Kale</vegetable>
 
-  <grains>Quinoa</grains>
+  <grain>Quinoa</grain>
 </list>
