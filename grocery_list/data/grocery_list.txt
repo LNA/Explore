@@ -1,28 +1,12 @@
-<whole foods>
+<list>
   <fruit>Apples</fruit>
   <fruit>Bananas</fruit>
-  <fruit>Frozen Berries</fruit>
-  <fruit>Pears</fruit>
-  <fruit>Pineapple</fruit>
-  <fruit>Strawberries</fruit>
 
-  <vegetables>Broccoli</vegetables>
   <vegetables>Spinach</vegetables>
   <vegetables>Kale</vegetables>
-  <vegetables>Bell Peppers</vegetables>
-  <vegetables>Mushrooms</vegetables>
 
   <condiments>Veganese</condiments>
-  <condiments>Coconut Oil</condiments>
   <condiments>Pesto</condiments>
 
   <grains>Quinoa</grains>
-
-  <supplements>Maca Powder</supplements>
-  <supplements>Aloe Vera</supplements>
-  <supplements>Protein Powder</supplements>
-
-  <lean protein>Chicken Apple Sausage</lean protein>
-  <lean protein>Tofu Turkey</lean protein>
-  <lean protein>Calamari Steaks</lean protein>
-</whole foods>
+</list>

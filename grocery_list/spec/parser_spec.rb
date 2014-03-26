@@ -1,9 +1,9 @@
 require 'parser'
 
 describe Parser do 
-  it "parses text" do 
+  it "parses fruit" do 
     parser = Parser.new
 
-    parser.parse_xml('data/grocery_list.txt').should == "s"
+    parser.parse_catagories('data/grocery_list.txt').should == {"fruit"=>[], "vegetables"=>[], "condiments"=>[], "grains"=>[]}
   end
 end
