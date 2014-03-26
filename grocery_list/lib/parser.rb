@@ -2,6 +2,7 @@ $: << File.expand_path(File.dirname(__FILE__) + "/../data/")
 require 'nokogiri'
 
 class Parser
+  attr_accessor :list
   def initialize(file)
     @file = file
   end
