@@ -24,9 +24,7 @@ class Parser
           if catagory == child.name
             @list[child.name] << child.children.text
           end
-          @list
         end
-        @list
       end
     end
     @list
