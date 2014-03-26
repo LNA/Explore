@@ -1,9 +1,16 @@
 require 'parser'
 
 describe Parser do 
-  it "parses fruit" do 
-    parser = Parser.new
+  before :each do
+    @parser = Parser.new('data/grocery_list.txt')
+    @test_list = @parser.parse_catagories
+  end
 
-    parser.parse_catagories('data/grocery_list.txt').should == {"fruit"=>[], "vegetables"=>[], "condiments"=>[], "grains"=>[]}
+  it "parses catagory names" do 
+   @test_list.should == {"fruit"=>[], "vegetables"=>[], "grains"=>[]}
+  end
+
+  it "parses the contents of catagories" do 
+    @parser.parse_contents.should == {"fruit"=>["Apples", "Bananas"], "vegetables"=>["Spinach", "Kale"], "grains"=>["Quinoa"]}
   end
 end

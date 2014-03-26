@@ -5,8 +5,5 @@
   <vegetables>Spinach</vegetables>
   <vegetables>Kale</vegetables>
 
-  <condiments>Veganese</condiments>
-  <condiments>Pesto</condiments>
-
   <grains>Quinoa</grains>
 </list>
