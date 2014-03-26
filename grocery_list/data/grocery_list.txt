@@ -1,0 +1,20 @@
+<whole foods>
+  <fruit>
+    Apple, Bananas, Pears, Mixed Berry Blend
+  </fruit>
+  <vegetables>
+    Broccoli, Mushrooms, Bell Peppers, Spinach, Kale
+  </vegetables>
+  <condiments>
+    Veganese, Coconut Oil, Pesto, Almond Butter
+  </condiments>
+  <grains>
+    Quinoa
+  </grains>
+  <supplements>
+    Maca Powder, Nutritional Yeast
+  </supplements>
+  <lean protein>
+    Chicken Apple Sausage, Tofuturkey, Calamari Steaks
+  </lean protein>
+</whole foods>
