@@ -21,9 +21,7 @@ class Parser
     Nokogiri::XML(File.open(@file)).css('list').each do |list|
       list.children.each do |child|
         @list.each_pair do |catagory, item|
-          if catagory == child.name
-            @list[child.name] << child.children.text
-          end
+          add_contents(catagory, child)
         end
       end
     end
@@ -35,6 +33,12 @@ private
   def add_catagory(child)
     if child.name != "text"
       @list[child.name] = []
+    end
+  end
+
+  def add_contents(catagory, child)
+    if catagory == child.name
+      @list[child.name] << child.children.text
     end
   end
 end
