@@ -1,0 +1,127 @@
+### Architecture
+Q: What is architecture?
+
+A: In the context of this book, architecture is:
+  1. The highest-level breakdown of a system into its parts 
+  2. decisions that are hard to change
+  3. subjective
+
+* There are multiple architectures in a system
+* What is architecturally significant changes over a systems lifetime
+
+* This book is about decomposing an enterprise application into layers and how
+* these layers work together
+
+* Some patterns in the book are architectural b/c they represent decisions about these parts
+* Some are about the design that help you to realize that architecture.
+
+### Enterprise Applications
+
+* Also called information systems or data processing
+
+* Examples of: payroll, patient records, shipping tracking, cost analysis, credit scoring, insurance,
+  customer service, foreign exchange trading.
+
+* What is not: fuel injection, elevator controllers, word processors, operating systems, compilers, games.
+
+* Usually involve persistent data.
+
+Q: What is persistent data? 
+
+A: Data that is not frequently accessed and not likely to be modified. 
+   data is persisted b/c it needs to be around multiple runs of the program.  
+   This is the opposite of dynamic/transactional data; data that is asynchronously changed as further updates to the information become available.  Persistent data typically sits around
+   in the program for several years.  The data doesn't change but the program that uses it does.  During that time there will be changes to the structure of the data in order to store new pieces of information w/o disturbing old pieces.  
+
+* This systems hold a lot of data
+* The data is typically accessed concurrently
+* There is usually alot of UI screens to handle the accessing of this data
+* Enterprise applications often intergrate with other enterprise applications
+
+### Kinds of Enterprise Applications
+
+* They are all differerent  
+* Different problems lead to different ways of doing things
+* One of the challenges of design is knowing about alternatives and judging the trade-offs that come
+* with choosing one over the other
+
+* Different Systems With Differnt Difficulties:
+1. A B2C (business to customer) Online Retailer: people browse and buy.  
+  * Handles a high volume of users.  System needs to be efficient in terms of resources used but also
+    scalable so that you can increase the load by adding more hardware
+  * domain logic includes order capturing, pricing, shipping.
+  * Anyone can access the system via a simple web presentation that can be used with all browsers
+  * Data source includes a database for holding orders and some communication with inventory 
+
+2. A System That Automates Lease Agrenments
+  * Fewer users than B2C
+  * Complicated business logic; calculating monthly bills on a lease, handling returns, late payments,
+    validating data as a lease is booked.
+  * Also complicated b/c of little variations in leasing.  The rules are arbitrary.
+  * The UI is more complicated than a B2C
+  * Complicated transaction behavior: may take hours to book a lease.  During that time the user is in
+    a logical transaction
+  * Has a complex database schema; could have 200 tables and connections to packages
+    for asset valuation and pricing.
+
+3. An Expense Tracking System for a Small Company:
+  * Has few users, simple logic and can be made accesable through a simple HTML presentation.
+  * Complications: Must be built quickly,
+  * Complications: System may grow as people want to calculate reimbursement checks, 
+    feed them into payroll system, understand tax implications, provide reports for the CFO etc.
+  * Trying to use the architecture of either of the 2 previous systems will slow down the
+    design of this one, cost $ and delay the benefits of the others
+  * Don't want to make decisions that hamper future growth
+  * If you add flexibility now & get it wrong, the complexity added for the sake of flexibility 
+    may delay deployment and delay the benefit
+
+* Choosing an architecture means you must understand the complexities and particular problems of your 
+  system and chose an appropriate design based on that understanding.
+
+### Thinking About Performance
+* minimize remote calls
+* verify every tip by measuring on your application
+* know when to sacrifice performance for understandability
+* significant changes in configuration may invalidate any facts about performance; if you upgrade
+  to a new version of your virtual machine, hardware, database, etc you must redo your performance
+  optimizations and make sure they're helping.
+
+* Terms like scalability are used in inconsistent ways.  Here are the terms Fowler uses:
+
+* Response Time:
+    Amount of time it takes for a system to process a request from the outside
+
+* Responsiveness:
+    How quickly a system acknowledges a request as opposed to processing it
+
+* Latency:
+    The minimum time required to get any form of response, even if the work to be done is non existant
+
+* Throughput:
+    How much stuff you can do in a given amout of time
+
+* Performance:
+    Either throughput or response time
+
+* Load:
+    How much stress a system is under, which might be measured by how many users its connected to
+
+* Load Sensitivity:
+    How the response time varies with the load
+
+* Efficiency: performance divided by resources
+
+* Capicity: indication of a maximum thoughtput or load
+
+* Scalibility: measure of how adding resources, 
+    usually hardware, affects performance.  
+    A scalable system allows you to add hardware and get proportionate performance improvement,
+    such as doubling how many servers you have to double your throughput
+
+* Vertical Scalability/Scaling Up: 
+    adding more power to a single server
+
+* Horizontal Scalability/Scaling Out:
+  adding more servers
+
+* Design decisions don't affect all of these performance factors equally
