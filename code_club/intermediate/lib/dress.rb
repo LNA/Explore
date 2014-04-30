@@ -1,3 +1,3 @@
 class Dress 
-  attr_accessor :length, :color
+  attr_accessor :id, :length, :color
 end

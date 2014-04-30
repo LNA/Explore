@@ -1,3 +1,3 @@
 class Hat
-  attr_accessor :type, :team
+  attr_accessor :id, :type, :team
 end

@@ -40,8 +40,8 @@ describe Closet do
       my_closet.save(flower_dress)
       my_closet.save(blue_dress)
       my_closet.save(bulls_hat)
-
-      my_closet.records[2].should == bulls_hat
+  
+      my_closet.records[3].should == bulls_hat
     end
   end
 
