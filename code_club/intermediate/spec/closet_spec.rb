@@ -33,14 +33,14 @@ describe Closet do
       my_closet.save(flower_dress)
       my_closet.save(blue_dress)
 
-      my_closet.records[2].id.should == bulls_hat.id
+      my_closet.records[2].id.should == blue_dress.id
     end
 
     it 'can save more than one item' do
       my_closet.save(flower_dress)
       my_closet.save(blue_dress)
       my_closet.save(bulls_hat)
-  
+
       my_closet.records[3].should == bulls_hat
     end
   end
@@ -53,7 +53,7 @@ describe Closet do
       my_closet.all.should == [flower_dress, bulls_hat]
     end
 
-    it 'returns an empty array if it has no posts' do
+    it 'returns an empty array if it has no items' do
       my_closet.all.should == []
     end
   end
