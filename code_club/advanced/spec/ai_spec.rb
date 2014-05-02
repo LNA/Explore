@@ -1,6 +1,3 @@
-require 'ai'
-require 'board'
-require 'game_rules'
 require 'spec_helper'
 
 
