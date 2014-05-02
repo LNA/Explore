@@ -23,7 +23,7 @@ describe Closet do
       my_closet.records[1].should == flower_dress
     end
 
-    it 'sets the id on the post that it saves' do
+    it 'sets the id on the dress that it saves' do
       my_closet.save(flower_dress)
 
       my_closet.records[1].id.should == flower_dress.id
