@@ -7,7 +7,7 @@ class TaskFinder
 
     days[today]
     tasks
-  ends
+  end
 
   def saturday(tasks)
     tasks["Saturday"] = {}
