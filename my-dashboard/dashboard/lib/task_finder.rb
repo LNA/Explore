@@ -1,10 +1,13 @@
 class TaskFinder
   def find(tasks, today)
-    days = {"saturday" => saturday(tasks), "sunday" => sunday(tasks), 
-            "monday" => monday(tasks),     "tuesday" => tuesday(tasks)}
+    days = {"saturday"  => saturday(tasks),  "sunday"   => sunday(tasks), 
+            "monday"    => monday(tasks),    "tuesday"  => tuesday(tasks),
+            "wednesday" => wednesday(tasks), "thursday" => thursday(tasks),
+            "friday"    => friday(tasks)}
+
     days[today]
     tasks
-  end
+  ends
 
   def saturday(tasks)
     tasks["Saturday"] = {}
