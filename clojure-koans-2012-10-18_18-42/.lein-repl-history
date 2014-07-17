@@ -1,0 +1,43 @@
+(range 1 5)
+(range 5)
+(drop (range 95 99) (range 100))
+(take 20 (iterate inc 0))
+(filter odd? (range 10))
+(for [x (range 10) :when (odd? x)]
+       x)
+(map (fn [x] (* x x))
+          (filter odd? (range 10))
+)
+(complement symbol?)
+(complement 4)
+(complement [2])
+(map not-a-symbol? [:a 'b "c"])
+(map (compliment symblo?) [:a 'b "c"])
+(map (compliment symbol?) [:a 'b "c"])
+(map (complement symbol?) [:a 'b "c"])
+exit
+(fn [[a b]] (str b a)) [:foo :bar])
+((fn [[a b]] (str b a))
+         [:foo :bar])
+(str "First comes love, "
+          "then comes marriage, "
+          "then comes Clojure with the baby carriage")
+     ((fn [[a b c]] __)
+      ["love" "marriage" "Clojure"])
+(hash-map :original-parts full-name :named-parts (hash-map :first first-name :last last-name))
+(hash-map :first first-name :last last-name)
+(hash-map :first "a" :last "c")
+:last
+:first
+"c"
+(:one)
+([:one])
+(= "123 Test Lane, Testerville, TX"
+     (let [{street-address :street-address, city :city, state :state} test-address]
+       (str street-address city state)))
+([:hi])
+([:one])
+(["hi])
+"
+)
+(["hi"])
