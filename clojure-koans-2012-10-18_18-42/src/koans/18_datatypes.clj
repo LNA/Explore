@@ -15,28 +15,33 @@
 (deftype Razzie [category]
   Award
   (present [this recipient]
-    __))
+    (print (str "You're really the "
+                (.category this) ", "
+                recipient
+                "... sorry."
+                ))))
+
 
 (meditations
   "Holding records is meaningful only when the record is worthy of you"
-  (= __ (.prize (Nobel. "peace")))
+  (= "peace" (.prize (Nobel. "peace"))) ;the period indicates a constructor giving us an instance of the Nobel record.  Can access the prize value by calling .prize.``
 
   "Types are quite similar"
-  (= __ (.prize (Pulitzer. "literature")))
+  (= "literature" (.prize (Pulitzer. "literature")))
 
   "Records may be treated like maps"
-  (= __ (:prize (Nobel. "physics")))
+  (= "physics" (:prize (Nobel. "physics")))
 
   "While types may not"
-  (= __ (:prize (Pulitzer. "poetry")))
+  (= nil (:prize (Pulitzer. "poetry")))
 
   "Further study reveals why"
-  (= __
-     (map map? [(Nobel. "chemistry")
-                (Pulitzer. "music")]))
+  (= [true false]
+     (map map? [(Nobel. "chemistry") ;Nobel can be a map because its a record
+                (Pulitzer. "music")])) ;Pulitzer it is a type
 
-  "Either sort of datatype can define methods in a protocol"
-  (= __
+   "Either sort of datatype can define methods in a protocol"
+  (= "Congratulations on your Best Picture Oscar, Evil Alien Conquerors!"
      (with-out-str (present (Oscar. "Best Picture") "Evil Alien Conquerors")))
 
   "Surely we can implement our own by now"

@@ -6,13 +6,14 @@
   (=  1 (first '(1 2 3 4 5)))
 
   "As well as the rest"
-  (= '(2 3 4 5)(rest '(1 2 3 4 5)))
+  (= '(2 3 4 5) (rest '(1 2 3 4 5))) ;rest will return everything but the first element.
 
   "The rest when nothing is left is empty"
-  (=  (rest '(100)))
+  (=  (rest '(100))) ; if there is nothing left, it returns nothing
 
   "And construction by adding an element to the front is simple"
-  (= '(:a :b :c :d :e) (cons :a '(:b :c :d :e)))
+  (= '(:a :b :c :d :e) (cons :a '(:b :c :d :e))) ; construct a new list by adding an element to the front
+
   "Conjoining an element to a list can be done in the reverse order"
   (= '(0 :a :b :c :d :e) (conj '(:a :b :c :d :e) 0))
 

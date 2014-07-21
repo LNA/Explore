@@ -41,3 +41,7 @@ exit
 "
 )
 (["hi"])
+(def the-world (ref "hello"))
+(do
+          (dosync (alter the-world +  20)))
+exit

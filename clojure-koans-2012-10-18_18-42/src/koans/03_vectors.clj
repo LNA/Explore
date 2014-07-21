@@ -1,4 +1,4 @@
-(meditations
+( meditations
   "You can use vectors in clojure to create an 'Array' like structure"
   (= 1  (count [42]))
 
@@ -30,4 +30,4 @@
   (= [:butter :and] (subvec [:peanut :butter :and :jelly] 1 3))
 
   "Equality with collections is in terms of values"
-  (= (list 1 2 3) (vector 1 2 3)))
+  (= (list 1 2 3) (vector 1 2 3))) ;a lists values can be equal to a vectors values
