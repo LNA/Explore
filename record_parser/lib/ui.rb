@@ -19,4 +19,8 @@ class UI
   def descending_birthday_message
     puts UNSORTED_RECORDS_MESSAGE
   end
+
+  def display_records(line)
+    p "#{line[0]} #{line[1]} #{line[2]} #{line[3]} #{((line[-1]).insert(2, "/")).insert(5, "/")}"
+  end
 end
