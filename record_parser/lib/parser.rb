@@ -1,4 +1,22 @@
 class Parser
+  def parse(file)
+    if text(file) || csv(file)
+      parse_text(file)
+    else
+      parse_xml(file)
+    end
+  end
+
+private
+
+  def text(file)
+    file[-1] == 't'
+  end
+
+  def csv(file)
+    file[-1] == 'v'
+  end
+
   def parse_text(file)
     file = file_to_array(file)
     file.map {|record| record.split(' ')}
@@ -14,7 +32,6 @@ class Parser
     records
   end
 
-private
   def file_to_array(file)
     File.readlines(file)
   end
